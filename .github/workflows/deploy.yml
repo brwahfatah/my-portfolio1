@@ -3,30 +3,33 @@ name: Deploy VuePress site
 on:
   push:
     branches:
-      - main  # deploy only when main branch is updated
+      - main   # Deploy whenever main branch is pushed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup Node
+      # 2. Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18' # Use a stable Node version
 
+      # 3. Install dependencies
       - name: Install dependencies
         run: npm install
 
-      - name: Build site
+      # 4. Build the VuePress site
+      - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      # 5. Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.9.3
-
-        
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/.vuepress/dist
