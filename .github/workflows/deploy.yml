@@ -1,6 +1,5 @@
 name: Deploy VuePress site
 
-# Trigger deployment when you push to main branch
 on:
   push:
     branches:
@@ -20,16 +19,21 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'  # stable Node.js version
+          cache: 'npm'
 
       # 3. Install project dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci --legacy-peer-deps
 
-      # 4. Build the VuePress site
+      # 4. Ensure VuePress is executable
+      - name: Fix permissions for VuePress
+        run: chmod +x ./node_modules/.bin/vuepress || true
+
+      # 5. Build the VuePress site
       - name: Build VuePress site
         run: npm run build
 
-      # 5. Deploy to GitHub Pages
+      # 6. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
