@@ -2,13 +2,12 @@ import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
 import { viteBundler } from '@vuepress/bundler-vite'
 
-
-
-
 export default defineUserConfig({
+  // 👇 IMPORTANT: replace with your actual repo name (no <>)
+  base: '/my-portfolio1/',
+
   title: 'Brwa Portfolio',
   description: 'Welcome to my personal portfolio built with VuePress',
-  base: '/my-portfolio1/',
 
   theme: defaultTheme({
     navbar: [
@@ -19,22 +18,12 @@ export default defineUserConfig({
       { text: 'Contact', link: '/contact/' },
     ],
     sidebar: {
-    '/': [
-      '/',
-    ],
-    '/about/': [
-      '/about/',
-    ],
-    '/projects/': [
-      '/projects/',
-    ],
-    '/skills/': [
-      '/skills/',
-    ],
-    '/contact/': [
-      '/contact/',
-    ],
-  },
+      '/': ['/',],
+      '/about/': ['/about/'],
+      '/projects/': ['/projects/'],
+      '/skills/': ['/skills/'],
+      '/contact/': ['/contact/'],
+    },
   }),
 
   bundler: viteBundler(),
