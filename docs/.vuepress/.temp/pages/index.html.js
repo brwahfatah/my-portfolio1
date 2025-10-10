@@ -1,16 +1,3 @@
 import comp from "C:/my-portfolio1/docs/.vuepress/.temp/pages/index.html.vue"
-const data = JSON.parse("{\"path\":\"/\",\"title\":\"👋 Welcome to Brwa Hawar's Portfolio\",\"lang\":\"en-US\",\"frontmatter\":{},\"git\":{},\"filePathRelative\":\"README.md\"}")
+const data = JSON.parse("{\"path\":\"/\",\"title\":\"👋 Welcome to Brwa Hawar's Portfolio\",\"lang\":\"en-US\",\"frontmatter\":{},\"git\":{\"updatedTime\":1759707917000,\"contributors\":[{\"name\":\"Brwa Hawar\",\"username\":\"\",\"email\":\"brwahawar82@gmail.com\",\"commits\":1}],\"changelog\":[{\"hash\":\"ce74af1b3c3af02d6240d4689c172b30408ceccf\",\"time\":1759707917000,\"email\":\"brwahawar82@gmail.com\",\"author\":\"Brwa Hawar\",\"message\":\"Initial commit - VuePress portfolio\"}]},\"filePathRelative\":\"README.md\"}")
 export { comp, data }
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
-}

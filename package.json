@@ -1,22 +1,17 @@
 {
   "name": "my-portfolio1",
   "version": "1.0.0",
-  "description": "",
+  "description": "Brwa Portfolio",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy": "gh-pages -d docs/.vuepress/dist"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "vuepress": "^2.0.0-rc.24",
+    "@vuepress/theme-default": "^2.0.0-rc.24",
     "@vuepress/bundler-vite": "^2.0.0-rc.24",
-    "@vuepress/theme-default": "^2.0.0-rc.112",
-    "sass-embedded": "^1.93.2",
-    "vuepress": "^2.0.0-rc.24"
-  },
-  "dependencies": {
-    "markdown-it-emoji": "^3.0.0"
+    "gh-pages": "^5.0.0"
   }
 }
